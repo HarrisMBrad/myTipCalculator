@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">myTipCalculator</string>
-    <string name="tip_percentage">Tip Percentage</string>
-    <string name="bill_amount_here">Bill Amount Here</string>
-    <string name="what_s_their_tip">What\'s Their Tip ?</string>
+    <string name="app_name">my Tip </string>
+    <string name="tip_percentage"> Tip Percentage</string>
+    <string name="bill_amount_here"> Bill Amount Here</string>
+    <string name="what_s_their_tip"> What\'s Their Tip ?</string>
+
 </resources>
