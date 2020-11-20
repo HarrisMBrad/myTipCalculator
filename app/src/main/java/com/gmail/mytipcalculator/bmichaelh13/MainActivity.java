@@ -3,7 +3,9 @@ package com.gmail.mytipcalculator.bmichaelh13;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int seekBarPercentage;
     private float enteredBillFloat;
 
+    public static final String TAG = "MainActivity";
+
 
 
     @Override
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calculateButton = (Button) findViewById(R.id.calculateButtonId);
         totalResultTextView = (TextView) findViewById(R.id.resultId);
         textViewSeekBar = (TextView) findViewById(R.id.textViewSeekBarId);
+
+        Toast.makeText(getApplicationContext(), "Hello Big Spender", Toast.LENGTH_LONG).show();
+
+
 
         calculateButton.setOnClickListener(this);
 
@@ -67,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calculate();
     }
 
+    //TODO build out this app to include more stuff...
+
     public void calculate() {
 
         float result = 0.0f;
@@ -75,7 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             enteredBillFloat = Float.parseFloat(enteredAmount.getText().toString());
             result = enteredBillFloat * seekBarPercentage / 100;
-            totalResultTextView.setText("$" + String.valueOf(result) + "  Your Tip");
+            totalResultTextView.setText("$" + String.valueOf(result) + "  Gratuity");
+
+            Log.v(TAG, String.valueOf(result));
+
         } else {
             Toast.makeText(MainActivity.this, "Please enter the bill amount.", Toast.LENGTH_LONG).show();
         }
